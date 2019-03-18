@@ -74,6 +74,7 @@ database.ref("/trains").on("child_added", function(snapshot) {
     // Remove Items
     $("#table-data").on("click", "tr span", function() {
         var trainRef = database.ref("/trains/");
+        console.log(trainRef);
         trainRef.remove();
         window.location.reload();
         })
