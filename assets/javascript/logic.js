@@ -71,13 +71,13 @@ database.ref("/trains").on("child_added", function(snapshot) {
             $(this).find("span").hide();
         });
 
-    // STARTED BONUS TO REMOVE ITEMS ** not finished **
+    // Remove Items
     $("#table-data").on("click", "tr span", function() {
-        console.log(this);
         var trainRef = database.ref("/trains/");
-        console.log(trainRef);
+        trainRef.remove();
+        window.location.reload();
+        })
     });
-});
 
 // function to call the button event, and store the values in the input form
 var storeInputs = function(event) {
